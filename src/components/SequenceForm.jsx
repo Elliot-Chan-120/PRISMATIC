@@ -27,6 +27,13 @@ function SequenceForm({ form, setForm, onScreenResult, onRepairResult }) {
     }
   }
 
+
+  const validNameRegex = /^[A-Xa-z0-9_]+$/;
+  const name = form.gene_name;
+  if (!validNameRegex.test(name)) {
+    return "Gene name can only have characters, numbers and underscores (_) "
+  }
+
   const chr = parseInt(form.chr_num);
   if (isNaN(chr) || chr < 1 || chr > 24) {
     return "Chromosome number must be between 1 and 24. Note: X=23, Y=24";
