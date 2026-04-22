@@ -1,11 +1,11 @@
 @font-face {
   font-family: SpcGrtsk_reg;
-  src: url("../src/assets/fonts/SpaceGrotesk-Regular.ttf");
+  src: url("../public/fonts/SpaceGrotesk-Regular.ttf");
 }
 
 @font-face {
   font-family: SpcGrtsk_bld;
-  src: url("../src/assets/fonts/SpaceGrotesk-Bold.ttf")
+  src: url("../public/fonts/SpaceGrotesk-Bold.ttf")
 }
 
 :root {
