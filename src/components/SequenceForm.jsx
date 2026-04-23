@@ -6,6 +6,7 @@ function SequenceForm({ form, setForm, onScreenResult, onRepairResult }) {
 
   const maxFlankLength=500;
   const maxAlleleLength=30;
+  const minFlankLength=10;
 
   function handleChange(e) {
     let { name, value } = e.target;
@@ -55,7 +56,10 @@ function SequenceForm({ form, setForm, onScreenResult, onRepairResult }) {
       return `${field} must contain ATCG (base nucleotides)`;
     }
     if (form[field].length > maxFlankLength) {
-      return `${field} must be <= ${maxFlankLength} bp`;
+      return `${field} must be > ${minFlankLength} and < ${maxFlankLength}`
+    }
+    if (form[field].length < minFlankLength) {
+      return `${field} must be > ${minFlankLength} and < ${maxFlankLength}`
     }
   }
 
